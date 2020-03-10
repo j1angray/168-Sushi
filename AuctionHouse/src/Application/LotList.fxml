@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="submitButton" prefHeight="511.0" prefWidth="468.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LotListController">
+   <children>
+      <Button id="submit" fx:id="submit" layoutX="161.0" layoutY="422.0" mnemonicParsing="false" onAction="#redistAuction" text="submit" />
+        <TextField id="id" fx:id="id" layoutX="161.0" layoutY="76.0" prefHeight="7.0" prefWidth="161.0" promptText="default" />
+      <Button id="index" fx:id="index" layoutX="234.0" layoutY="422.0" mnemonicParsing="false" onAction="#retunindex" text="Return" />
+      <TextField id="name" fx:id="name" layoutX="161.0" layoutY="125.0" prefHeight="7.0" prefWidth="161.0" promptText="default" />
+      <TextField id="key" fx:id="key" layoutX="161.0" layoutY="172.0" prefHeight="7.0" prefWidth="161.0" promptText="default" />
+      <Label layoutX="109.0" layoutY="80.0" prefHeight="15.0" prefWidth="45.0" text="name:" />
+      <Label layoutX="109.0" layoutY="129.0" prefHeight="15.0" prefWidth="45.0" text="name：" />
+      <Label layoutX="103.0" layoutY="176.0" prefHeight="15.0" prefWidth="45.0" text="name：" />
+      <Label layoutX="124.0" layoutY="24.0" prefHeight="15.0" prefWidth="251.0" text="A maximum of three pieces of auction" />
+      <Label layoutX="193.0" layoutY="53.0" prefHeight="15.0" prefWidth="64.0" text="Auction 1" />
+      <Label layoutX="185.0" layoutY="110.0" prefHeight="15.0" prefWidth="64.0" text="Auction 2" />
+      <Label layoutX="185.0" layoutY="157.0" prefHeight="15.0" prefWidth="64.0" text="Auction 3" />
+   </children>
+</AnchorPane>

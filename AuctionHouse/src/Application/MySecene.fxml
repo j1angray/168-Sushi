@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="submitButton" prefHeight="385.0" prefWidth="468.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MyController">
+   <children>
+      <Button id="submit" fx:id="submit" layoutX="139.0" layoutY="213.0" mnemonicParsing="false" onAction="#redistAuction" text="Registered" />
+       <TextField id="id" fx:id="id" layoutX="154.0" layoutY="68.0" prefHeight="7.0" prefWidth="161.0" promptText="default" />
+      <Button id="index" fx:id="index" layoutX="242.0" layoutY="213.0" mnemonicParsing="false" onAction="#retunindex" text="Return" />
+      <TextField id="name" fx:id="name" layoutX="154.0" layoutY="111.0" prefHeight="7.0" prefWidth="161.0" promptText="default" />
+      <TextField id="key" fx:id="key" layoutX="154.0" layoutY="162.0" prefHeight="7.0" prefWidth="161.0" promptText="default" />
+      <Label layoutX="90.0" layoutY="72.0" prefHeight="15.0" prefWidth="64.0" text="Public ID：" />
+      <Label layoutX="21.0" layoutY="115.0" prefHeight="15.0" prefWidth="133.0" text="Name：" />
+      <Label layoutX="52.0" layoutY="166.0" prefHeight="15.0" prefWidth="102.0" text="Secret Key：" />
+      <Label layoutX="183.0" layoutY="31.0" prefHeight="15.0" prefWidth="64.0" text="Registered" />
+   </children>
+</AnchorPane>
