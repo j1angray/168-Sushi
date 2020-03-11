@@ -25,7 +25,7 @@ import javafx.scene.text.Font;
  * View the set of auctions that have been set
  * @throws IOException
  */
-public class LotNoList  {
+public class bidItemList {
 	private Lot selectedLot=null;
 	  private IntegerProperty index = new SimpleIntegerProperty();
 	    //get index
@@ -49,13 +49,13 @@ public class LotNoList  {
 	    private final ObservableList<Lot> data =
 	            FXCollections.observableArrayList(Utils.lots);
 //
-	    public  LotNoList() {
+	    public bidItemList() {
 	    }
 	    /**
 	     * View the set of auctions that have been set
 	     * @param stage
 	     */
-	    public  LotNoList(Stage stage) {
+	    public bidItemList(Stage stage) {
 	        Scene scene = new Scene(new Group());
 	        stage.setTitle("Items bidding prices list");
 	        stage.setWidth(600);
@@ -64,7 +64,7 @@ public class LotNoList  {
 	        final Label label = new Label("Item bidding prices List");
 	        label.setFont(new Font("Arial", 20));
 
-	        TableColumn publicIdCol = new TableColumn("AuctionHouseId");
+	        TableColumn publicIdCol = new TableColumn("Auction House Id");
 	        publicIdCol.setCellValueFactory(
 	                new PropertyValueFactory<Lot, String>("auctionId"));
 
@@ -77,7 +77,7 @@ public class LotNoList  {
 	        keyCol.setCellValueFactory(
 	                new PropertyValueFactory<Lot, String>("name"));
 
-	        TableColumn usernameCol = new TableColumn("Bid User");
+	        TableColumn usernameCol = new TableColumn("Client Name");
 	        usernameCol.setMinWidth(200);
 	        usernameCol.setCellValueFactory(
 	                new PropertyValueFactory<Lot, String>("userName"));
