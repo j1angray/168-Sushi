@@ -13,12 +13,10 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -47,37 +45,37 @@ public class Main extends Application {
 			menuBar.prefWidthProperty().bind(primaryStage.widthProperty());
 			root.setTop(menuBar);
 			Menu fileMenu = new Menu("Menu options");
-			MenuItem addAuction=new MenuItem("New Auction House");
-			MenuItem auctionDateils=new MenuItem("Auction Detail");
-			MenuItem nobid=new MenuItem("Item Bidding prices");
-			MenuItem bid=new MenuItem("Ended Bidding");
+			MenuItem newAuctionHouse=new MenuItem("New Auction House");
+			MenuItem auctionDetail=new MenuItem("Auction Detail");
+			MenuItem itemBiddingPrices=new MenuItem("Item Bidding prices");
+			MenuItem endedBidding=new MenuItem("Ended Bidding");
 			MenuItem exitMenuItem = new MenuItem("Exit procedure");
-			fileMenu.getItems().add(addAuction);
-			fileMenu.getItems().add(auctionDateils);
-			fileMenu.getItems().add(nobid);
-			fileMenu.getItems().add(bid);
+			fileMenu.getItems().add(newAuctionHouse);
+			fileMenu.getItems().add(auctionDetail);
+			fileMenu.getItems().add(itemBiddingPrices);
+			fileMenu.getItems().add(endedBidding);
 			fileMenu.getItems().add(exitMenuItem);
-			addAuction.setOnAction(
+			newAuctionHouse.setOnAction(
 					event->{
 						new AuctionList(primaryStage);
 					}
 					);
-			auctionDateils.setOnAction(
+			auctionDetail.setOnAction(
 					event->{
 						Utils.getDetails();
 						new LotList(primaryStage);
 					}
 					);
-			bid.setOnAction(
+			endedBidding.setOnAction(
 					event->{
 						Utils.getDetailsByType("2");
-						new LotOkList(primaryStage);
+						new endedItemList(primaryStage);
 					}
 					);
-			nobid.setOnAction(
+			itemBiddingPrices.setOnAction(
 					event->{
 						Utils.getDetailsByType("1");
-						new LotNoList(primaryStage);
+						new bidItemList(primaryStage);
 					}
 					);
 
