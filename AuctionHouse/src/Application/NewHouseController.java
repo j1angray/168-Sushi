@@ -33,7 +33,7 @@ import javafx.stage.Stage;
  * @author
  *
  */
-public class MyController implements Initializable {
+public class NewHouseController implements Initializable {
 	@FXML
 	private Button submit;
 	@FXML
@@ -50,7 +50,7 @@ public class MyController implements Initializable {
 	}
 
 	/**
-	 * Registered auction house
+	 * Register a auction house
 	 * @param event
 	 */
 	public void redistAuction(ActionEvent event) {
