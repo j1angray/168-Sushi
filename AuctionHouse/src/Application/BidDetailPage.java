@@ -41,7 +41,7 @@ import javafx.scene.text.Text;
  * Opening bid details page
  * @throws IOException
  */
-public class BiddingList  {
+public class BidDetailPage {
 	static   String  l="";
 	static  String h="";
 
@@ -58,7 +58,7 @@ public class BiddingList  {
 		return index;
 	}
 //
-	public  BiddingList() {
+	public BidDetailPage() {
 	}
 
 	/**
@@ -66,7 +66,7 @@ public class BiddingList  {
 	 * @param primaryStage
 	 * @param lot
 	 */
-	public  BiddingList(Stage primaryStage,Lot lot) {
+	public BidDetailPage(Stage primaryStage, Lot lot) {
 		primaryStage.setTitle("View Auction details");
 		String json="@#@getrecord_"+lot.getPrijectId();
 		try {
