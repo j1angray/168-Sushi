@@ -2,15 +2,11 @@ package application.share;
 
 
 import java.io.IOException;
-import java.nio.channels.SocketChannel;
 import java.util.ArrayList;
 import java.util.List;
 
-import application.AuctionList;
-import application.LotList;
-import application.LotNoList;
-import application.LotOkList;
-import application.Main;
+import application.*;
+import application.endedItemList;
 import application.share.entity.Auction;
 import application.share.entity.Lot;
 import javafx.application.Platform;
@@ -45,12 +41,12 @@ public class Utils {
 		MenuBar menuBar = new MenuBar();
 		menuBar.prefWidthProperty().bind(primaryStage.widthProperty());
 		root.setTop(menuBar);
-		Menu fileMenu = new Menu("Menu options");
-		MenuItem addAuction=new MenuItem("Registered auction house");
-		MenuItem auctionDateils=new MenuItem("Details of the auction");
-		MenuItem nobid=new MenuItem("No Bid");
-		MenuItem bid=new MenuItem("Bid History");
-		MenuItem exitMenuItem = new MenuItem("Exit procedure");
+        Menu fileMenu = new Menu("Menu options");
+        MenuItem addAuction=new MenuItem("New Auction House");
+        MenuItem auctionDateils=new MenuItem("Details of the auction");
+        MenuItem nobid=new MenuItem("Item Bidding prices");
+        MenuItem bid=new MenuItem("Ended Bidding");
+        MenuItem exitMenuItem = new MenuItem("Exit procedure");
 		fileMenu.getItems().add(addAuction);
 		fileMenu.getItems().add(auctionDateils);
 		fileMenu.getItems().add(nobid);
@@ -70,13 +66,13 @@ public class Utils {
 		bid.setOnAction(
 				event->{
 					Utils.getDetailsByType("2");
-					new LotOkList(primaryStage);
+					new endedItemList(primaryStage);
 				}
 				);
 		nobid.setOnAction(
 				event->{
 					Utils.getDetailsByType("1");
-					new LotNoList(primaryStage);
+					new bidItemList(primaryStage);
 				}
 				);
 
@@ -111,17 +107,17 @@ public class Utils {
 	public static void start(Stage primaryStage) {
 		BorderPane root = new BorderPane();
 
-		primaryStage.setTitle("Auction house");
+		primaryStage.setTitle("Auction House");
 
 
 		MenuBar menuBar = new MenuBar();
 		menuBar.prefWidthProperty().bind(primaryStage.widthProperty());
 		root.setTop(menuBar);
 		Menu fileMenu = new Menu("Menu options");
-		MenuItem addAuction=new MenuItem("Registered auction house");
+		MenuItem addAuction=new MenuItem("New Auction House");
 		MenuItem auctionDateils=new MenuItem("Details of the auction");
-		MenuItem nobid=new MenuItem("No Bid");
-		MenuItem bid=new MenuItem("Bid History");
+		MenuItem nobid=new MenuItem("Item Bidding prices");
+		MenuItem bid=new MenuItem("Ended Bidding");
 		MenuItem exitMenuItem = new MenuItem("Exit procedure");
 		fileMenu.getItems().add(addAuction);
 		fileMenu.getItems().add(auctionDateils);
@@ -142,13 +138,13 @@ public class Utils {
 		bid.setOnAction(
 				event->{
 					Utils.getDetailsByType("2");
-					new LotOkList(primaryStage);
+					new endedItemList(primaryStage);
 				}
 				);
 		nobid.setOnAction(
 				event->{
 					Utils.getDetailsByType("1");
-					new LotNoList(primaryStage);
+					new bidItemList(primaryStage);
 				}
 				);
 
@@ -218,7 +214,7 @@ public class Utils {
 
 
 	/**
-	 * Check the auction house
+	 * Check the auction house details in terms of type
 	 */
 	public static void getDetailsByType(String type){
 		if(Utils.auction!=null){
