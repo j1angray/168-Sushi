@@ -25,7 +25,7 @@ import javafx.scene.text.Font;
  * Look at the auction that has ended the auction
  * @throws IOException
  */
-public class LotOkList  {
+public class endedItemList {
 	private Lot selectedLot=null;
 	  private IntegerProperty index = new SimpleIntegerProperty();
 	  //get index.get()
@@ -43,13 +43,13 @@ public class LotOkList  {
 	  private final ObservableList<Lot> data =
 	    FXCollections.observableArrayList(Utils.lots);
 
-	  public  LotOkList() {
+	  public endedItemList() {
 	  }
 	  /**
 	   * Look at the auction that has ended the auction
 	   * @param stage
 	   */
-	  public  LotOkList(Stage stage) {
+	  public endedItemList(Stage stage) {
 	    Scene scene = new Scene(new Group());
 	    stage.setTitle("Check the ended auction");
 	    stage.setWidth(600);
@@ -58,20 +58,20 @@ public class LotOkList  {
 	    final Label label = new Label("Item List");
 	    label.setFont(new Font("Arial", 20));
 
-	    TableColumn publicIdCol = new TableColumn("Auction Open Id");
+	    TableColumn publicIdCol = new TableColumn("Auction House Id");
 	    publicIdCol.setCellValueFactory(
 	            new PropertyValueFactory<Lot, String>("auctionId"));
 
-	    TableColumn nameCol = new TableColumn("Lot ID");
+	    TableColumn nameCol = new TableColumn("Item ID");
 	    nameCol.setCellValueFactory(
 	            new PropertyValueFactory<Lot, String>("Item ID"));
 
-	    TableColumn keyCol = new TableColumn("Lot Name");
+	    TableColumn keyCol = new TableColumn("Item Name");
 	    keyCol.setMinWidth(200);
 	        keyCol.setCellValueFactory(
 	                new PropertyValueFactory<Lot, String>("name"));
 
-	        TableColumn usernameCol = new TableColumn("Bid User");
+	        TableColumn usernameCol = new TableColumn("Client Name");
 	        usernameCol.setMinWidth(200);
 	        usernameCol.setCellValueFactory(
 	                new PropertyValueFactory<Lot, String>("userName"));
