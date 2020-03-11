@@ -48,8 +48,8 @@ public class AuctionList  {
   public  AuctionList(Stage stage) {
 	Parent root;
 	try {
-      root = FXMLLoader.load(getClass().getResource("/application/MySecene.fxml"));
-	  stage.setTitle("Auction House");
+      root = FXMLLoader.load(getClass().getResource("/application/newAuctionHouse.fxml"));
+	  stage.setTitle("Register Auction House");
 	  stage.setScene(new Scene(root));
 	  stage.show();
 	  } catch (IOException e) {
