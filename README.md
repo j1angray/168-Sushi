@@ -1,7 +1,8 @@
 # ECE-651-Project
-
 This is a **Java FX** based Auction House Project.
 There are **4 modules** representing differenct target users in the Auction System.
+
+
 
 ### Set-up
 
@@ -28,4 +29,4 @@ Test Tools: `Junit4` `EvoSuite`
 Improving........
 
 ### System Structure
-
+[System Structure](https://user-images.githubusercontent.com/55040026/77840418-4743b580-7155-11ea-8bb5-31053bc6bcc2.jpg)
