@@ -6,7 +6,9 @@ There are **4 modules** representing differenct target users in the Auction Syst
 ### Set-up
 
 IDE: `IntelliJ IDEA`
+
 System: OS X 10.13
+
 Test Tools: `Junit4` `EvoSuite`
 
 ### Functionality 
