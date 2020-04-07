@@ -1,6 +1,6 @@
 /***************************************************
- * Group member: Zihao Liu
- * The class add a controller of bank.
+ * Group member: Zihao Liu, Sun Su
+ * This class add a controller of Aucrion.
  **************************************************/
 package application;
 
@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.ResourceBundle;
 
 import application.share.AlertBox;
-import application.share.BankScoket;
+import application.share.AuctionScoket;
 import application.share.Utils;
 import application.share.entity.Auction;
 import application.share.entity.BankAccount;
@@ -28,20 +28,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 /**
- *Creating a user
+ *Apply for an auction
  * @author
  *
  */
-public class AddBankController implements Initializable {
+public class AddUserAuctionController implements Initializable {
 	@FXML
 	private Button submitButton;
 	@FXML
 	private Button returnindex;
-
-	@FXML
-	private TextField name;
-	@FXML
-	private TextField account;
 	@FXML
 	private TextField key;
 
@@ -53,35 +48,23 @@ public class AddBankController implements Initializable {
 	}
 
 	/**
-	 * Creating a user
+	 * Apply for an auction
 	 * @param event Monitor
 	 */
 	public void addBankUser(ActionEvent event) {
-		String namevalue=name.getText();
-		String accountvalue=account.getText();
 		String keyvalue=key.getText();
-		String moneyvalue="100000000.00";
-
-		String json="@#@addBank_"+namevalue+"_"+accountvalue+"_"+keyvalue+"_"+moneyvalue;
+		String json="@#@apply_"+keyvalue+"_"+Utils.bankuser.getBankName()+"_"+Utils.bankuser.bankKey;
 		try {
-			Main.sc.write(Main.charset.encode(json));
+			Main.scAuction.write((Main.charset.encode(json)));
 			Thread.sleep(1000);
-			if("bankUserOk".equals(BankScoket.msg)){
-				BankAccount ban=new BankAccount();
-				ban.setBankAccount(accountvalue);
-				ban.setBankKey(keyvalue);
-				ban.setState("0");
-				ban.setBankName(namevalue);
-				ban.setMoney(moneyvalue);
-				Utils.bankuser=ban;
-				new AlertBox().display(Utils.PROMPT, "Successful application account");
-			}else if("bankUserNo".equals(BankScoket.msg)){
-				new AlertBox().display(Utils.PROMPT, "The username or account can not be repeated");
+			if("applayAcutionOk".equals(AuctionScoket.msg)){
+				BankAccount b=Utils.bankuser;
+				b.setState("3");
+				new AlertBox().display(Utils.PROMPT, "Participate auction success.");
+			}else if("applayAcutionNo".equals(AuctionScoket.msg)){
+				new AlertBox().display(Utils.PROMPT, "Entering the application status, please wait patiently");
 			}
-		} catch (IOException e) {
-			new AlertBox().display(Utils.PROMPT, Utils.ERROR);
-			System.exit(1);
-		} catch (InterruptedException e) {
+		} catch (IOException | InterruptedException e) {
 			new AlertBox().display(Utils.PROMPT, Utils.ERROR);
 			System.exit(1);
 		}

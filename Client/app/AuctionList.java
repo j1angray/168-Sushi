@@ -1,5 +1,5 @@
 /***************************************************
- * Group member: Su Sun.
+ * Group member: Zihao Liu, Sun Su
  * This class is the list of auction.
  **************************************************/
 package application;
@@ -68,7 +68,7 @@ public class AuctionList  {
 	    public  AuctionList(Stage stage) {
 	    	table.getSelectionModel().select(0);
 	    	Scene scene = new Scene(new Group());
-		        stage.setTitle("Look at the details of the auction");
+		        stage.setTitle("Read the details of auction");
 		        stage.setWidth(600);
 		        stage.setHeight(730);
 
@@ -76,7 +76,7 @@ public class AuctionList  {
 		        label.setFont(new Font("Arial", 20));
 
 
-		        TableColumn nameCol = new TableColumn("Auctioneer ID");
+		        TableColumn nameCol = new TableColumn("Auction ID");
 		        nameCol.setMinWidth(200);
 		        nameCol.setCellValueFactory(
 		                new PropertyValueFactory<Lot, String>("project Id"));
@@ -123,7 +123,7 @@ public class AuctionList  {
 		            			if(Utils.bankuser!=null){
 			            			new BiddingList(stage,selectedLot);
 		            			}else{
-			            			new AlertBox().display(Utils.PROMPT, "Please register or open the account first");
+			            			new AlertBox().display(Utils.PROMPT, "Please register the account first");
 		            			}
 		            		}else{
 		            			new AlertBox().display(Utils.PROMPT, "Please choose a item to check the details");
@@ -132,7 +132,7 @@ public class AuctionList  {
 		            }
 		        });
 
-		        final Button returnindex = new Button("Back to the home page");
+		        final Button returnindex = new Button("Back to home page");
 		        returnindex.setOnAction(actionEvent -> new Utils().start(stage));
 
 		        vbox.getChildren().addAll(label,delButton, table, returnindex );

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="317.0" prefWidth="331.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddBankController">
+   <children>
+      <Label layoutX="78.0" layoutY="35.0" text="Registered bank account" />
+      <Label layoutX="71.0" layoutY="72.0" text="Name:" />
+      <Label layoutX="3.0" layoutY="111.0" prefHeight="15.0" prefWidth="120.0" text="Account Number:" />
+      <Label layoutX="78.0" layoutY="151.0" prefHeight="15.0" prefWidth="35.0" text="key:" />
+      <Label layoutX="67.0" layoutY="173.0" text="money:" />
+      <TextField id="name" fx:id="name" layoutX="113.0" layoutY="68.0" />
+      <TextField id="account" fx:id="account" layoutX="113.0" layoutY="107.0" />
+      <TextField id="key" fx:id="key" layoutX="113.0" layoutY="147.0" />
+      <Button id="submitButton" fx:id="submitButton" layoutX="78.0" layoutY="201.0" mnemonicParsing="false" onAction="#addBankUser" text="Registered" />
+      <Button id="returnindex" fx:id="returnindex" layoutX="195.0" layoutY="201.0" mnemonicParsing="false" onAction="#retunindex" text="Return" />
+      <Label layoutX="122.0" layoutY="173.0" text="\$100000000.00" />
+   </children>
+</AnchorPane>

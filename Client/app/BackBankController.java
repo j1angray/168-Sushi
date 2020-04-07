@@ -1,5 +1,5 @@
 /***************************************************
- * Group member: Zihao Liu
+ * Group member: Zihao Liu, Sun Su
  * This class build the GUI that back to the bank controller.
  **************************************************/
 package application;
@@ -59,14 +59,14 @@ public class BackBankController implements Initializable {
 					b.setBankName(namevalue);
 					b.setBankKey(msgArr[1]);
 					Utils.bankuser=b;
-					new AlertBox().display(Utils.PROMPT, "Successfully open:"+namevalue+"s' Account");
+					new AlertBox().display(Utils.PROMPT, "Successfully open: "+namevalue+"'s Account");
 				}else if(msgArr[0].equals("$genbankNo")){
-					new AlertBox().display(Utils.PROMPT, "The user name or account wrong, so can not be opened");
+					new AlertBox().display(Utils.PROMPT, "Cannot open, user name or account is wrong.");
 				}
 			}
 
 		} catch (IOException | InterruptedException e) {
-			new AlertBox().display(Utils.PROMPT, "Open user page failure");
+			new AlertBox().display(Utils.PROMPT, "Cannot open user page");
 		}
 
 	}
