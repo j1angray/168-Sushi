@@ -1,6 +1,6 @@
 # ECE-651-Project
 This is a **Java FX** based Auction House Project.
-There are **4 modules** representing differenct target users in the Auction System.
+There are **4 modules** in the Auction System, the module ***Auction Central*** is the server and the other 3 modules ***Auction House***, ***Client*** and ***Bank*** are taken as users of the system.
 
 
 
